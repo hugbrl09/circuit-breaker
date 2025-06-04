@@ -6,7 +6,7 @@ app.get('/users/list', (req, res) => {
   //   res.json([{ id: 1, name: 'João' }, { id: 2, name: 'Maria' }]);
   res.json({
     method: req.method,
-    url: `http://localhost:4001${req.originalUrl}`,
+    url: `http://localhost:4002${req.originalUrl}`,
     // headers: req.headers,
     // data: req.body
     data: {
