@@ -2,19 +2,17 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-app.get('/products/all', (req, res) => {
+app.get('/products', (req, res) => {
   //   res.json([{ id: 1, name: 'Teclado' }, { id: 2, name: 'Mouse' }]);
   res.json({
-    method: req.method,
-    url: `http://localhost:4003${req.originalUrl}`,
+    // method: req.method,
+    // url: `http://localhost:4003${req.originalUrl}`,
     // headers: req.headers,
     // data: req.body
-    data: {
       products: [
         { id: 1, name: 'Teclado' },
         { id: 2, name: 'Mouse' }
       ]
-    }
   });
 });
 

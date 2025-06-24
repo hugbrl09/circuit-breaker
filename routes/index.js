@@ -5,7 +5,7 @@ const authService = require('../services/authService');
 const userService = require('../services/userService');
 const productService = require('../services/productService');
 
-router.all('/auth/*path', async (req, res) => {
+router.all('/auth', async (req, res) => {
   try {
     const result = await authService.fire(req);
     res.status(result.status || 200).json(result.data || result);
@@ -14,7 +14,7 @@ router.all('/auth/*path', async (req, res) => {
   }
 });
 
-router.all('/users/*path', async (req, res) => {
+router.all('/users', async (req, res) => {
   try {
     const result = await userService.fire(req);
     res.status(result.status || 200).json(result.data || result);
@@ -23,7 +23,7 @@ router.all('/users/*path', async (req, res) => {
   }
 });
 
-router.all('/products/*path', async (req, res) => {
+router.all('/products', async (req, res) => {
   try {
     const result = await productService.fire(req);
     res.status(result.status || 200).json(result.data || result);

@@ -2,19 +2,19 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-app.get('/users/list', (req, res) => {
+app.get('/users', (req, res) => {
   //   res.json([{ id: 1, name: 'João' }, { id: 2, name: 'Maria' }]);
   res.json({
-    method: req.method,
-    url: `http://localhost:4002${req.originalUrl}`,
-    // headers: req.headers,
-    // data: req.body
-    data: {
+    // method: req.method,
+    // url: `http://localhost:4002${req.originalUrl}`,
+    // // headers: req.headers,
+    // // data: req.body
+
       users: [
         { id: 1, name: 'João' },
         { id: 2, name: 'Maria' }
       ]
-    }
+
   });
 });
 
